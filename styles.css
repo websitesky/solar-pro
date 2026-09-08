@@ -2123,7 +2123,7 @@ img {
   }
 
   .carousel__track > * {
-    flex-basis: 82%;
+    flex-basis: 76%;
   }
 
   .footer__top {
@@ -2694,6 +2694,111 @@ body.page {
   .nav-drop__caret,
   .mobile-nav__sub,
   .mobile-nav__toggle::after {
+    transition: none;
+  }
+}
+
+
+/* ============================================================
+   10. КЕРУВАННЯ КАРУСЕЛЛЮ: ТОЧКИ, СТРІЛКИ, ПІДКАЗКА
+   ============================================================ */
+.carousel__controls {
+  display: none;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carousel__hint {
+  display: none;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.carousel__nav {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  padding: 0 0 4px;
+  border: 1px solid rgba(26, 35, 126, 0.2);
+  border-radius: 50%;
+  color: var(--navy);
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(26, 35, 126, 0.12);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, opacity 160ms ease;
+}
+
+.carousel__nav:hover:not([disabled]) {
+  color: #fff;
+  background: var(--navy);
+}
+
+.carousel__nav[disabled] {
+  cursor: default;
+  opacity: 0.3;
+}
+
+.carousel__dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carousel__dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(26, 35, 126, 0.24);
+  cursor: pointer;
+  transition: width 240ms ease, background-color 240ms ease;
+}
+
+.carousel__dot.is-active {
+  width: 26px;
+  border-radius: 5px;
+  background: var(--navy);
+}
+
+/* --- на телефоні керування замість бічних стрілок --- */
+@media (max-width: 720px) {
+  .carousel__controls {
+    display: flex;
+  }
+
+  .carousel__hint {
+    display: block;
+  }
+
+  /* натяк, що стрічка триває за краєм екрана */
+  .carousel {
+    position: relative;
+  }
+
+  .carousel::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: -18px;
+    bottom: 30px;
+    width: 44px;
+    background: linear-gradient(90deg, rgba(253, 245, 233, 0), var(--cream) 78%);
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__dot {
     transition: none;
   }
 }

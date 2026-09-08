@@ -152,34 +152,106 @@
   function initCarousels() {
     $$('[data-carousel]').forEach(function (root) {
       var track = $('[data-carousel-track]', root);
-      var prev = $('[data-carousel-prev]', root);
-      var next = $('[data-carousel-next]', root);
       if (!track) return;
 
+      var prevButtons = $$('[data-carousel-prev]', root);
+      var nextButtons = $$('[data-carousel-next]', root);
+      var dotsBox = $('[data-carousel-dots]', root);
+      var controls = $('[data-carousel-controls]', root);
+      var hint = root.parentNode ? $('[data-carousel-hint]', root.parentNode) : null;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      /* ширина однієї картки разом із відступом */
       function step() {
         var card = track.firstElementChild;
-        if (!card) return 300;
+        if (!card) return track.clientWidth || 300;
         var gap = parseFloat(getComputedStyle(track).columnGap) || 24;
         return card.getBoundingClientRect().width + gap;
       }
 
-      function sync() {
-        var max = track.scrollWidth - track.clientWidth - 2;
-        if (prev) prev.disabled = track.scrollLeft <= 2;
-        if (next) next.disabled = track.scrollLeft >= max;
+      /* скільки карток видно одночасно */
+      function perView() {
+        if (!track.clientWidth) return 1;
+        return Math.max(1, Math.round(track.clientWidth / step()));
       }
 
-      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      /* точки рахуємо по картках, а не по «екранах» */
+      function pageCount() {
+        return Math.max(1, Math.ceil(track.children.length / perView()));
+      }
+
+      function unit() {
+        return perView() * step();
+      }
+
+      function maxScroll() {
+        return Math.max(0, track.scrollWidth - track.clientWidth);
+      }
+
+      function currentPage() {
+        var u = unit();
+        if (!u) return 0;
+        return Math.min(pageCount() - 1, Math.max(0, Math.round(track.scrollLeft / u)));
+      }
+
+      function goToPage(index) {
+        var left = Math.min(index * unit(), maxScroll());
+        track.scrollTo({ left: left, behavior: reduced.matches ? 'auto' : 'smooth' });
+        window.setTimeout(sync, 400);
+      }
+
+      function buildDots() {
+        if (!dotsBox) return;
+        var total = pageCount();
+
+        /* один екран — нема чого гортати */
+        if (controls) controls.hidden = total < 2;
+        if (hint) hint.hidden = total < 2;
+
+        if (dotsBox.children.length === total) return;
+        dotsBox.innerHTML = '';
+
+        for (var i = 0; i < total; i += 1) {
+          (function (index) {
+            var dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'carousel__dot';
+            dot.setAttribute('aria-label', 'Показати групу ' + (index + 1) + ' з ' + total);
+            dot.addEventListener('click', function () { goToPage(index); });
+            dotsBox.appendChild(dot);
+          })(i);
+        }
+      }
+
+      function sync() {
+        var max = track.scrollWidth - track.clientWidth - 2;
+        prevButtons.forEach(function (b) { b.disabled = track.scrollLeft <= 2; });
+        nextButtons.forEach(function (b) { b.disabled = track.scrollLeft >= max; });
+
+        if (!dotsBox) return;
+        var active = currentPage();
+        $$('.carousel__dot', dotsBox).forEach(function (dot, i) {
+          dot.classList.toggle('is-active', i === active);
+          dot.setAttribute('aria-current', i === active ? 'true' : 'false');
+        });
+      }
 
       function slide(direction) {
         track.scrollBy({ left: direction * step(), behavior: reduced.matches ? 'auto' : 'smooth' });
         window.setTimeout(sync, 400);
       }
 
-      if (prev) prev.addEventListener('click', function () { slide(-1); });
-      if (next) next.addEventListener('click', function () { slide(1); });
+      prevButtons.forEach(function (b) { b.addEventListener('click', function () { slide(-1); }); });
+      nextButtons.forEach(function (b) { b.addEventListener('click', function () { slide(1); }); });
       track.addEventListener('scroll', sync, { passive: true });
-      window.addEventListener('resize', sync);
+
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(function () { buildDots(); sync(); }, 150);
+      });
+
+      buildDots();
       sync();
     });
   }
