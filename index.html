@@ -30,7 +30,17 @@
           </a>
 
           <nav class="approved-nav" aria-label="Головне меню">
-            <a href="#catalog">Каталог</a>
+            <div class="nav-drop">
+              <button class="nav-drop__toggle" type="button" aria-expanded="false">
+                Каталог<span class="nav-drop__caret" aria-hidden="true"></span>
+              </button>
+              <ul class="nav-drop__menu">
+                <li><a href="kits.html">Готові комплекти</a></li>
+                <li><a href="inverters.html">Інвертори</a></li>
+                <li><a href="batteries.html">Акумулятори</a></li>
+                <li><a href="panels.html">Сонячні панелі</a></li>
+              </ul>
+            </div>
             <a href="#selection">Підбір обладнання</a>
             <a href="#about">Про нас</a>
             <a href="#reviews">Відгуки</a>
@@ -66,11 +76,15 @@
       <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Меню">
         <button class="mobile-nav__close" type="button" aria-label="Закрити меню">×</button>
         <nav aria-label="Мобільне меню">
-          <a href="#catalog">Каталог</a>
-          <a href="kits.html">Комплекти</a>
-          <a href="inverters.html">Інвертори</a>
-          <a href="batteries.html">Акумулятори</a>
-          <a href="panels.html">Сонячні панелі</a>
+          <div class="mobile-nav__group">
+            <button class="mobile-nav__toggle" type="button" aria-expanded="false">Каталог</button>
+            <div class="mobile-nav__sub">
+              <a href="kits.html">Готові комплекти</a>
+              <a href="inverters.html">Інвертори</a>
+              <a href="batteries.html">Акумулятори</a>
+              <a href="panels.html">Сонячні панелі</a>
+            </div>
+          </div>
           <a href="#selection">Підбір обладнання</a>
           <a href="#about">Про нас</a>
           <a href="#reviews">Відгуки</a>
@@ -90,9 +104,17 @@
           <span>SolarPro</span>
         </a>
         <nav class="sticky-header__nav" aria-label="Меню сторінки">
-          <a href="#catalog">Каталог</a>
-          <a href="inverters.html">Інвертори</a>
-          <a href="batteries.html">Акумулятори</a>
+          <div class="nav-drop">
+            <button class="nav-drop__toggle" type="button" aria-expanded="false">
+              Каталог<span class="nav-drop__caret" aria-hidden="true"></span>
+            </button>
+            <ul class="nav-drop__menu">
+              <li><a href="kits.html">Готові комплекти</a></li>
+              <li><a href="inverters.html">Інвертори</a></li>
+              <li><a href="batteries.html">Акумулятори</a></li>
+              <li><a href="panels.html">Сонячні панелі</a></li>
+            </ul>
+          </div>
           <a href="#selection">Підбір</a>
           <a href="#about">Про нас</a>
           <a href="#faq">Запитання</a>

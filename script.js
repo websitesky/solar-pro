@@ -81,6 +81,15 @@
     nav.addEventListener('click', function (e) { if (e.target === nav) close(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !nav.hidden) close(); });
 
+    /* підменю «Каталог» у шторці */
+    $$('.mobile-nav__toggle', nav).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var group = btn.closest('.mobile-nav__group');
+        var isOpen = group.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+
     /* липкий хедер */
     var sticky = $('#sticky-header');
     var hero = $('.approved-hybrid-variant');
@@ -94,6 +103,47 @@
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  }
+
+  /* ==========================================================
+     2b. ВИПАДАЮЧЕ МЕНЮ «КАТАЛОГ»
+     ========================================================== */
+  function initDropdowns() {
+    var drops = $$('.nav-drop');
+    if (!drops.length) return;
+
+    function closeAll(except) {
+      drops.forEach(function (drop) {
+        if (drop === except) return;
+        drop.classList.remove('is-open');
+        var toggle = $('.nav-drop__toggle', drop);
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    drops.forEach(function (drop) {
+      var toggle = $('.nav-drop__toggle', drop);
+      if (!toggle) return;
+
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isOpen = !drop.classList.contains('is-open');
+        closeAll(drop);
+        drop.classList.toggle('is-open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      /* клік по пункту меню — закриваємо */
+      $$('.nav-drop__menu a', drop).forEach(function (link) {
+        link.addEventListener('click', function () { closeAll(null); });
+      });
+    });
+
+    document.addEventListener('click', function () { closeAll(null); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      closeAll(null);
+    });
   }
 
   /* ==========================================================
@@ -565,6 +615,7 @@
   function init() {
     applyConfig();
     initNav();
+    initDropdowns();
     initCarousels();
     initReveal();
     initQuiz();

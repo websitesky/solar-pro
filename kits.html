@@ -22,11 +22,22 @@
           <span class="approved-logo-mark" aria-hidden="true"></span>
           <span>SolarPro</span>
         </a>
-        <nav class="sticky-header__nav" aria-label="Каталог">
-            <a href="kits.html" class="is-active">Комплекти</a>
-            <a href="inverters.html">Інвертори</a>
-            <a href="batteries.html">Акумулятори</a>
-            <a href="panels.html">Сонячні панелі</a>
+        <nav class="sticky-header__nav" aria-label="Головне меню">
+          <div class="nav-drop">
+            <button class="nav-drop__toggle" type="button" aria-expanded="false">
+              Каталог<span class="nav-drop__caret" aria-hidden="true"></span>
+            </button>
+            <ul class="nav-drop__menu">
+              <li><a href="kits.html" class="is-active">Готові комплекти</a></li>
+              <li><a href="inverters.html">Інвертори</a></li>
+              <li><a href="batteries.html">Акумулятори</a></li>
+              <li><a href="panels.html">Сонячні панелі</a></li>
+            </ul>
+          </div>
+          <a href="index.html#selection">Підбір обладнання</a>
+          <a href="index.html#about">Про нас</a>
+          <a href="index.html#faq">Запитання</a>
+          <a href="#contacts">Контакти</a>
         </nav>
         <a class="btn btn--primary btn--sm" href="index.html#selection">Підібрати систему</a>
         <button class="sticky-header__menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-nav"></button>
@@ -38,10 +49,15 @@
         <button class="mobile-nav__close" type="button" aria-label="Закрити меню">×</button>
         <nav aria-label="Мобільне меню">
           <a href="index.html">Головна</a>
-          <a href="kits.html">Комплекти</a>
-          <a href="inverters.html">Інвертори</a>
-          <a href="batteries.html">Акумулятори</a>
-          <a href="panels.html">Сонячні панелі</a>
+          <div class="mobile-nav__group">
+            <button class="mobile-nav__toggle" type="button" aria-expanded="false">Каталог</button>
+            <div class="mobile-nav__sub">
+              <a href="kits.html">Готові комплекти</a>
+              <a href="inverters.html">Інвертори</a>
+              <a href="batteries.html">Акумулятори</a>
+              <a href="panels.html">Сонячні панелі</a>
+            </div>
+          </div>
           <a href="index.html#selection">Підбір обладнання</a>
           <a href="index.html#about">Про нас</a>
           <a href="index.html#faq">Запитання</a>
