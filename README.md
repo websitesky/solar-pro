@@ -39,6 +39,32 @@ solar/
 
 Значення підставляються на сторінку автоматично (телефон у хедері, у футері, в контактах тощо).
 
+## Деплой
+
+### Vercel
+
+У корені лежить `vercel.json`. Він каже Vercel, що це звичайна статика без збірки:
+
+```json
+"framework": null, "buildCommand": null, "installCommand": null, "outputDirectory": "."
+```
+
+Без цього Vercel намагається знайти папку `public` і падає з
+`No Output Directory named "public" found`.
+
+Підключення: Vercel → Add New → Project → імпорт `websitesky/solar-pro` → Deploy.
+Нічого в налаштуваннях змінювати не треба; якщо проєкт уже створений — Settings →
+General → **Root Directory** має бути порожній (корінь репозиторію), Framework Preset —
+**Other**, після чого Redeploy.
+
+Ще `vercel.json` віддає файли з `assets/` із річним кешем, а на всі відповіді додає
+`X-Content-Type-Options`, `Referrer-Policy` і `X-Frame-Options`.
+
+### GitHub Pages
+
+Settings → Pages → Source: **Deploy from a branch** → Branch `main`, папка `/ (root)`.
+Файл `.nojekyll` уже в репозиторії, тому Jekyll нічого не чіпатиме.
+
 ## Заявки в Telegram
 
 ### ⚠️ Про безпеку
