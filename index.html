@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Інвертори та сонячні панелі для дому й бізнесу — живлення під час відключень та контроль споживання енергії. Підбір системи за 10 хвилин, перевірена сумісність, доставка по Україні.">
+    <meta name="theme-color" content="#1a237e">
+    <title>Інвертори та сонячні панелі | SolarPro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <a class="skip-link" href="#catalog">Перейти до каталогу</a>
+
+    <!-- ====================================================================
+         1. ПЕРШИЙ ЕКРАН — узятий без змін із approved-hero.html
+         ==================================================================== -->
+    <main class="approved-hybrid-variant" id="top">
+      <section class="approved-video-area" aria-labelledby="approved-title">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-solar-home.jpg" src="assets/hero.mp4" aria-hidden="true"></video>
+
+        <header class="approved-header">
+          <a class="approved-logo" href="#top" aria-label="SolarPro — на головну">
+            <span class="approved-logo-mark" aria-hidden="true"></span>
+            <span>SolarPro</span>
+          </a>
+
+          <nav class="approved-nav" aria-label="Головне меню">
+            <a href="#catalog">Каталог</a>
+            <a href="#selection">Підбір обладнання</a>
+            <a href="#about">Про нас</a>
+            <a href="#reviews">Відгуки</a>
+            <a href="#faq">Запитання</a>
+            <a href="#contacts">Контакти</a>
+          </nav>
+
+          <a class="approved-phone" href="tel:+380501234567" data-config="brand.phone">+38 (050) 123-45-67</a>
+          <button class="approved-menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-nav"></button>
+        </header>
+
+        <h1 class="approved-title" id="approved-title">Інвертори та сонячні панелі для вашого дому та бізнесу</h1>
+      </section>
+
+      <section class="approved-lower" aria-label="Переваги та наступні кроки">
+        <p class="approved-promise">Менше залежності від мережі — більше спокою та контролю</p>
+
+        <ul class="approved-benefits">
+          <li><span class="approved-check" aria-hidden="true">✓</span><span>Живлення під час відключень</span></li>
+          <li><span class="approved-check" aria-hidden="true">✓</span><span>Економніше споживання енергії</span></li>
+          <li><span class="approved-check" aria-hidden="true">✓</span><span>Система, що зростає разом із вашими потребами</span></li>
+        </ul>
+
+        <div class="approved-actions">
+          <a class="approved-button" href="#catalog">Перейти до каталогу →</a>
+          <a class="approved-button secondary" href="#selection">Допомога у підборі</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- мобільне меню -->
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Меню">
+        <button class="mobile-nav__close" type="button" aria-label="Закрити меню">×</button>
+        <nav aria-label="Мобільне меню">
+          <a href="#catalog">Каталог</a>
+          <a href="kits.html">Комплекти</a>
+          <a href="inverters.html">Інвертори</a>
+          <a href="batteries.html">Акумулятори</a>
+          <a href="panels.html">Сонячні панелі</a>
+          <a href="#selection">Підбір обладнання</a>
+          <a href="#about">Про нас</a>
+          <a href="#reviews">Відгуки</a>
+          <a href="#faq">Запитання</a>
+          <a href="#contacts">Контакти</a>
+        </nav>
+        <a class="mobile-nav__phone" href="tel:+380501234567" data-config="brand.phone">+38 (050) 123-45-67</a>
+        <a class="mobile-nav__tg" href="#" data-config-href="social.telegram" target="_blank" rel="noopener">Написати в Telegram</a>
+      </div>
+    </div>
+
+    <!-- липкий хедер, з'являється після першого екрана -->
+    <header class="sticky-header" id="sticky-header" aria-hidden="true">
+      <div class="shell sticky-header__inner">
+        <a class="sticky-header__logo" href="#top">
+          <span class="approved-logo-mark" aria-hidden="true"></span>
+          <span>SolarPro</span>
+        </a>
+        <nav class="sticky-header__nav" aria-label="Меню сторінки">
+          <a href="#catalog">Каталог</a>
+          <a href="inverters.html">Інвертори</a>
+          <a href="batteries.html">Акумулятори</a>
+          <a href="#selection">Підбір</a>
+          <a href="#about">Про нас</a>
+          <a href="#faq">Запитання</a>
+          <a href="#contacts">Контакти</a>
+        </nav>
+        <a class="btn btn--primary btn--sm" href="#selection">Підібрати систему</a>
+        <button class="sticky-header__menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-nav"></button>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         2. КАТЕГОРІЇ ТОВАРІВ → окремі сторінки каталогу
+         ==================================================================== -->
+    <section class="section section--categories" id="catalog" aria-labelledby="cat-title">
+      <div class="shell">
+        <p class="eyebrow">Ми рекомендуємо</p>
+        <h2 class="section__title" id="cat-title">Обладнання, яке найчастіше обирають для дому та бізнесу</h2>
+        <p class="section__lead section__lead--wide">Затребувані моделі з оптимальним співвідношенням потужності, надійності та вартості</p>
+
+        <div class="carousel" data-carousel>
+          <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Попередні категорії" data-carousel-prev>‹</button>
+
+          <div class="carousel__track" data-carousel-track>
+            <article class="cat-card">
+              <div class="cat-card__media"><img src="assets/kit.svg" alt="Готовий комплект резервного живлення" loading="lazy" width="320" height="260"></div>
+              <h3><a href="kits.html">Готові комплекти</a></h3>
+              <p>Інвертор + акумулятор в одному рішенні — усе підібрано й сумісне одразу, без пошуку сумісності вручну.</p>
+              <p class="cat-card__from">від 1 570 $ · 4 позиції</p>
+              <a class="btn btn--primary btn--pill" href="kits.html">Обрати</a>
+            </article>
+
+            <article class="cat-card">
+              <div class="cat-card__media"><img src="assets/inverter.svg" alt="Гібридний інвертор" loading="lazy" width="320" height="260"></div>
+              <h3><a href="inverters.html">Інвертори</a></h3>
+              <p>Гібридні інвертори від 6 до 50 кВт — одно- та трифазні. Резервне живлення й захист техніки під час відключень.</p>
+              <p class="cat-card__from">від 780 $ · 8 позицій</p>
+              <a class="btn btn--primary btn--pill" href="inverters.html">Обрати</a>
+            </article>
+
+            <article class="cat-card">
+              <div class="cat-card__media"><img src="assets/battery.svg" alt="Акумулятор LiFePO4" loading="lazy" width="320" height="260"></div>
+              <h3><a href="batteries.html">Акумулятори LiFePO₄</a></h3>
+              <p>Безпечні літій-залізо-фосфатні батареї від 5 до 30 кВт·год — під квартиру, будинок або бізнес-об’єкт.</p>
+              <p class="cat-card__from">від 790 $ · 6 позицій</p>
+              <a class="btn btn--primary btn--pill" href="batteries.html">Обрати</a>
+            </article>
+
+            <article class="cat-card">
+              <div class="cat-card__media"><img src="assets/panel.svg" alt="Сонячна панель" loading="lazy" width="320" height="260"></div>
+              <h3><a href="panels.html">Сонячні панелі</a></h3>
+              <p>Панелі провідних світових виробників, кабелі та монтажні системи — щоб виробляти власну електроенергію.</p>
+              <p class="cat-card__from">від 72 $ · 5 позицій</p>
+              <a class="btn btn--primary btn--pill" href="panels.html">Обрати</a>
+            </article>
+          </div>
+
+          <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Наступні категорії" data-carousel-next>›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. КВІЗ
+         ==================================================================== -->
+    <section class="section section--quiz-intro" id="selection" aria-labelledby="quiz-title">
+      <div class="shell">
+        <p class="eyebrow">Підбір обладнання</p>
+        <h2 class="section__title" id="quiz-title">Дізнайтеся, яка система підійде саме вам</h2>
+        <p class="section__lead section__lead--wide">Дайте відповідь на 7 простих запитань — ми визначимо потужність системи та підберемо сумісне обладнання.</p>
+        <p class="section__note">Це безкоштовно та не зобов’язує вас робити замовлення.</p>
+      </div>
+    </section>
+
+    <section class="quiz" aria-label="Квіз підбору обладнання">
+      <div class="quiz__inner">
+        <!-- крок -->
+        <div class="quiz__stage" data-quiz-stage>
+          <p class="quiz__counter"><span data-quiz-current>1</span> / <span data-quiz-total>7</span></p>
+          <div class="quiz__progress" aria-hidden="true"><span data-quiz-bar></span></div>
+          <h3 class="quiz__question" data-quiz-question>Для чого вам потрібна система?</h3>
+          <div class="quiz__options" role="radiogroup" aria-label="Варіанти відповіді" data-quiz-options></div>
+          <div class="quiz__nav">
+            <button class="quiz__back" type="button" data-quiz-back hidden>← Назад</button>
+            <button class="btn btn--primary btn--pill quiz__next" type="button" data-quiz-next disabled>Далі  →</button>
+          </div>
+        </div>
+
+        <!-- результат -->
+        <div class="quiz__result" data-quiz-result hidden>
+          <p class="quiz__counter">Готово</p>
+          <h3 class="quiz__question" data-result-title>Ваша орієнтовна система</h3>
+
+          <div class="quiz__specs">
+            <div class="quiz__spec"><span class="quiz__spec-label">Інвертор</span><strong data-result-inverter>—</strong></div>
+            <div class="quiz__spec"><span class="quiz__spec-label">Акумулятори</span><strong data-result-battery>—</strong></div>
+            <div class="quiz__spec"><span class="quiz__spec-label">Автономність</span><strong data-result-hours>—</strong></div>
+          </div>
+
+          <p class="quiz__result-note">Заповніть форму — інженер прорахує точну ціну й зателефонує протягом 15 хвилин.</p>
+
+          <form class="quiz__form" novalidate data-lead-form data-lead-source="Квіз підбору">
+            <div class="field">
+              <label for="quiz-name">Ваше ім’я *</label>
+              <input id="quiz-name" name="name" type="text" required autocomplete="name" placeholder="Як до вас звертатися?">
+            </div>
+            <div class="field">
+              <label for="quiz-phone">Ваш номер телефону *</label>
+              <input id="quiz-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+380 __ ___ __ __">
+            </div>
+            <button class="btn btn--primary btn--wide" type="submit">Отримати точний розрахунок</button>
+            <p class="form__status" data-form-status role="status"></p>
+            <p class="form__consent">Надсилаючи форму, ви погоджуєтесь на обробку даних для зворотного дзвінка.</p>
+          </form>
+
+          <button class="quiz__restart" type="button" data-quiz-restart>Пройти ще раз</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. ХТО МИ
+         ==================================================================== -->
+    <section class="section section--about" id="about" aria-labelledby="about-title">
+      <div class="shell about">
+        <p class="eyebrow">Хто ми</p>
+        <h2 class="section__title" id="about-title">Більше, ніж інтернет-магазин енергообладнання</h2>
+        <span class="about__rule" aria-hidden="true"></span>
+
+        <p class="about__intro">Ми не просто продаємо обладнання — <strong>допомагаємо розібратися, що підійде саме для вашого будинку або бізнесу.</strong></p>
+
+        <ul class="about__facts">
+          <li class="fact">
+            <span class="fact__num">7+</span>
+            <span class="fact__text">років працюємо з перевіреними світовими брендами</span>
+          </li>
+          <li class="fact">
+            <span class="fact__num">100%</span>
+            <span class="fact__text">компонентів звіряємо на сумісність перед відправленням</span>
+          </li>
+          <li class="fact">
+            <span class="fact__num">15 хв</span>
+            <span class="fact__text">і у вас готовий розрахунок під реальне споживання та бюджет</span>
+          </li>
+        </ul>
+
+        <p class="about__outro">У результаті ви отримуєте не набір складного обладнання, а зрозуміле й надійне рішення: <strong>світло під час відключень, справну техніку та більше спокою за свій дім або бізнес.</strong></p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. ПІДТРИМКА НА КОЖНОМУ ЕТАПІ
+         ==================================================================== -->
+    <section class="section section--support" aria-labelledby="support-title">
+      <div class="shell">
+        <p class="eyebrow">Чому обирають нас?</p>
+        <h2 class="section__title" id="support-title">Підтримка на кожному етапі</h2>
+        <p class="section__lead">Не залишаємо вас сам на сам з обладнанням — допомагаємо від підбору до підключення.</p>
+
+        <ul class="support__grid">
+          <li class="support__item">
+            <span class="support__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M24 13v11l7 5"/></svg>
+            </span>
+            <h3>Підбір оптимального рішення за 10 хвилин</h3>
+            <p>Уточнимо ваші потреби та запропонуємо сумісне обладнання відповідної потужності й бюджету.</p>
+          </li>
+
+          <li class="support__item">
+            <span class="support__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="6.5"/><path d="M24 6v6M24 36v6M42 24h-6M12 24H6M36.7 11.3l-4.2 4.2M15.5 32.5l-4.2 4.2M36.7 36.7l-4.2-4.2M15.5 15.5l-4.2-4.2"/></svg>
+            </span>
+            <h3>Перевірена сумісність обладнання</h3>
+            <p>Перед відправленням перевіряємо, щоб інвертор, панелі та інші компоненти відповідали одне одному й правильно працювали разом.</p>
+          </li>
+
+          <li class="support__item">
+            <span class="support__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 30c-4 0-7-3-7-7s3-7 7-7c1-6 6-10 12-10s11 4 12 10c4 0 7 3 7 7s-3 7-7 7"/><path d="M24 22v18M18 34l6 6 6-6"/></svg>
+            </span>
+            <h3>Підтримка наших інженерів</h3>
+            <p>Під час монтажу ваш електрик може звернутися до наших інженерів по консультацію зі схемою, налаштуванням і технічними питаннями.</p>
+          </li>
+
+          <li class="support__item">
+            <span class="support__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="6" width="30" height="36" rx="4"/><path d="M16 16h16M16 24h16M16 32h10"/></svg>
+            </span>
+            <h3>Схеми та документи для монтажу</h3>
+            <p>Надаємо технічну документацію, інструкції та зрозумілі схеми підключення, щоб майстер виконав монтаж швидше й без помилок.</p>
+          </li>
+        </ul>
+
+        <div class="support__actions">
+          <a class="btn btn--primary" href="#cta">Отримати консультацію</a>
+          <a class="btn btn--outline" href="#catalog">Перейти в каталог</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. ПЕРЕВАГИ — виділений блок
+         ==================================================================== -->
+    <section class="section section--advantages" aria-labelledby="adv-title">
+      <div class="shell advantages">
+        <p class="eyebrow eyebrow--light">Наша перевага</p>
+        <h2 class="advantages__title" id="adv-title">
+          Інвертори та панелі, які на 100% сумісні між собою та ідеально підходять під ваш запит
+        </h2>
+
+        <ul class="advantages__list">
+          <li><span class="approved-check" aria-hidden="true">✓</span><span>Усі кабелі та запобіжники вже в наборі.</span></li>
+          <li><span class="approved-check" aria-hidden="true">✓</span><span>Покрокові інструкції для швидкого підключення майстром.</span></li>
+          <li><span class="approved-check" aria-hidden="true">✓</span><span>Прямий зв’язок з нашим інженером під час монтажу.</span></li>
+          <li><span class="approved-check" aria-hidden="true">✓</span><span>Не вистачить потужності — обміняємо за наш рахунок.</span></li>
+          <li><span class="approved-check" aria-hidden="true">✓</span><span>Усе обладнання поїде до вас у день замовлення.</span></li>
+          <li><span class="approved-check" aria-hidden="true">✓</span><span>Оплата частинами 0% без переплат.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. ДОПОМОГА У ПІДБОРІ
+         ==================================================================== -->
+    <section class="section section--help" aria-labelledby="help-title">
+      <div class="shell help">
+        <p class="eyebrow">Допомога у підборі</p>
+        <h2 class="section__title" id="help-title">Не знаєте, що обрати? Допоможемо розібратися</h2>
+        <p class="section__lead">Залиште номер телефону — наш інженер уточнить ваші потреби та підбере найкраще рішення. Зручніше листуватися? Напишіть нам у Telegram.</p>
+
+        <form class="help__form" novalidate data-lead-form data-lead-source="Допомога у підборі">
+          <div class="field">
+            <label class="visually-hidden" for="help-name">Ваше ім’я</label>
+            <input id="help-name" name="name" type="text" required autocomplete="name" placeholder="Ваше ім’я">
+          </div>
+          <div class="field">
+            <label class="visually-hidden" for="help-phone">Ваш номер телефону</label>
+            <input id="help-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+380 __ ___ __ __">
+          </div>
+          <button class="btn btn--primary btn--wide" type="submit">Замовити консультацію</button>
+          <a class="btn btn--outline btn--wide" href="#" data-config-href="social.telegram" target="_blank" rel="noopener">Написати в Телеграм</a>
+          <p class="form__status" data-form-status role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         8. ВІДГУКИ
+         ==================================================================== -->
+    <section class="section section--reviews" id="reviews" aria-labelledby="rev-title">
+      <div class="shell">
+        <p class="eyebrow">Відгуки</p>
+        <h2 class="section__title" id="rev-title">Що говорять наші клієнти після покупки</h2>
+        <p class="section__lead">Відгуки тих, хто вже зробив свій вибір</p>
+
+        <ul class="reviews">
+          <li class="review">
+            <span class="review__quote" aria-hidden="true">”</span>
+            <h3 class="review__author">Олександр, Київська область</h3>
+            <p>Не міг самостійно визначитися з потужністю інвертора, тому звернувся за консультацією. Менеджер уточнив, яка техніка має працювати під час відключень, і запропонував кілька варіантів під мій бюджет. Усе пояснили зрозуміло, замовлення відправили швидко. Система працює без проблем.</p>
+          </li>
+          <li class="review">
+            <span class="review__quote" aria-hidden="true">”</span>
+            <h3 class="review__author">Ірина, Львів</h3>
+            <p>Замовляли сонячні панелі та інвертор для приватного будинку. Найбільше хвилювалися, чи все буде сумісне між собою. Нам підібрали повний комплект, надали документи та схему підключення. Під час монтажу інженер також проконсультував нашого електрика. Дуже зручний підхід.</p>
+          </li>
+          <li class="review">
+            <span class="review__quote" aria-hidden="true">”</span>
+            <h3 class="review__author">Андрій, Дніпро</h3>
+            <p>Потрібне було резервне живлення для невеликого магазину, щоб під час відключень працювали каса, освітлення та холодильники. Нам розрахували необхідну потужність без зайвого запасу й переплати. Обладнання доставили вчасно, а після покупки залишалися на зв’язку та допомогли з налаштуванням.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         9. CTA
+         ==================================================================== -->
+    <section class="cta" id="cta" aria-labelledby="cta-title">
+      <div class="cta__inner">
+        <p class="eyebrow eyebrow--light">Консультація</p>
+        <h2 class="cta__title" id="cta-title">Готові до енергонезалежності?</h2>
+        <p class="cta__lead">Підберемо рішення під ваш запит за 15 хвилин</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="#" data-config-href="social.telegram" target="_blank" rel="noopener">Написати у Телеграм</a>
+          <a class="btn btn--ghost" href="#contacts">Отримати консультацію</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         10. FAQ
+         ==================================================================== -->
+    <section class="section section--faq" id="faq" aria-labelledby="faq-title">
+      <div class="shell">
+        <p class="eyebrow">Запитуєте — відповідаємо</p>
+        <h2 class="section__title" id="faq-title">Відповідаємо на запитання, які виникають перед покупкою</h2>
+        <p class="section__lead">Коротко й зрозуміло пояснюємо, як підібрати систему, що потрібно для її підключення та яку підтримку ви отримаєте після замовлення.</p>
+
+        <div class="faq" data-faq>
+          <details class="faq__item">
+            <summary>Чи допомагаєте ви з монтажем і підключенням?</summary>
+            <div class="faq__body">
+              <p>Так. До кожного замовлення додаємо схему підключення, інструкції та специфікацію кабелів і запобіжників. Монтаж виконує ваш електрик — а наш інженер на зв’язку під час робіт і відповідає на його запитання щодо схеми, налаштувань інвертора та запуску системи. Якщо свого майстра немає, порадимо перевіреного монтажника у вашому регіоні.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Які є способи оплати?</summary>
+            <div class="faq__body">
+              <p>Оплата карткою або на рахунок для фізичних осіб, безготівковий розрахунок з ПДВ для ФОП і компаній, а також накладений платіж при отриманні. Для більшості позицій доступна оплата частинами до 12 місяців без переплат від банків-партнерів. Умови узгоджуємо особисто — залежно від обраного обладнання та способу отримання.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Як швидко ви відправляєте замовлення?</summary>
+            <div class="faq__body">
+              <p>Обладнання, що є на складі, вирушає до вас у день замовлення, якщо ви оформили його до 15:00. Доставка «Новою поштою» по Україні — зазвичай 1–2 дні. Якщо позиції немає в наявності, чесно кажемо строк постачання ще до оплати й не тримаємо вас у невідомості.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Як зрозуміти, який інвертор мені потрібен?</summary>
+            <div class="faq__body">
+              <p>Потрібні три речі: тип мережі (однофазна 220 В чи трифазна 380 В), сумарна потужність приладів, які мають працювати одночасно, і бажана тривалість автономії. Пройдіть <a href="#selection">квіз із 7 запитань</a> — за 2 хвилини отримаєте орієнтовну потужність, або зателефонуйте нам і ми порахуємо разом. Найчастіше для квартири вистачає 3–6 кВт, для приватного будинку — 6–12 кВт.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Чи будуть інвертор і сонячні панелі сумісні між собою?</summary>
+            <div class="faq__body">
+              <p>Це ми перевіряємо до відправлення. Звіряємо напругу й струм масиву панелей із діапазоном MPPT інвертора, ємність і напругу акумуляторів, підбираємо перерізи кабелів та захист. Якщо ви купуєте комплектом — усе вже узгоджене між собою. Якщо частина обладнання у вас уже є, надішліть моделі — перевіримо сумісність безкоштовно ще до покупки.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Чи є офіційна гарантія?</summary>
+            <div class="faq__body">
+              <p>Так, продаємо лише нове обладнання з офіційною гарантією виробника: інвертори — 5 років, акумулятори LiFePO₄ — 5–10 років, сонячні панелі — до 12 років на виріб і до 25 років на продуктивність. Гарантійні випадки ведемо самі: вам не потрібно листуватися з виробником. Документи й гарантійні талони їдуть разом із замовленням.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Чи є доставка по Україні?</summary>
+            <div class="faq__body">
+              <p>Так, відправляємо у будь-який регіон країни «Новою поштою» або адресною доставкою для великих акумуляторів. Обладнання пакуємо в жорстку тару, страхуємо на повну вартість і надсилаємо ТТН одразу після відправлення. Якщо посилка прийшла пошкодженою — розпакування знімайте на відео, ми вирішимо питання за свій рахунок.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Скільки протримає система під час відключення?</summary>
+            <div class="faq__body">
+              <p>Залежить від ємності акумуляторів і навантаження. Орієнтовно, при звичайному побутовому використанні (котел, холодильник, освітлення, роутер, телевізор):</p>
+              <ul>
+                <li>інвертор ~6 кВт + акумулятор ~5 кВт·год — приблизно 4–6 годин;</li>
+                <li>інвертор ~6 кВт + акумулятори ~10 кВт·год — приблизно 8–12 годин.</li>
+              </ul>
+              <p>Із сонячними панелями система підзаряджається вдень, тому автономність фактично не обмежена світловим днем. Точний розрахунок під ваш об’єкт зробимо на консультації.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         11. КОНТАКТИ
+         ==================================================================== -->
+    <section class="section section--contacts" id="contacts" aria-labelledby="contacts-title">
+      <div class="shell contacts__head">
+        <p class="eyebrow">Ми на зв’язку</p>
+        <h2 class="section__title" id="contacts-title">Маєте запитання? Ми на зв’язку</h2>
+        <p class="section__lead">Телефонуйте або пишіть — спокійно все пояснимо та допоможемо розібратися.</p>
+      </div>
+
+      <div class="contacts">
+        <div class="contacts__info">
+          <dl class="contacts__list">
+            <dt>Адреса:</dt>
+            <dd data-config="brand.address">79000, м. Львів, вул. Городоцька, 120</dd>
+
+            <dt>Години роботи:</dt>
+            <dd data-config="brand.hours">Понеділок – Субота: 9:00 – 18:00</dd>
+
+            <dt>Контакти:</dt>
+            <dd>
+              <a href="tel:+380501234567" data-config="brand.phone">+38 (050) 123-45-67</a><br>
+              <a href="mailto:info@solarpro.ua" data-config="brand.email">info@solarpro.ua</a>
+            </dd>
+          </dl>
+
+          <div class="contacts__map">
+            <iframe title="Карта — склад обладнання SolarPro" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-map src=""></iframe>
+          </div>
+        </div>
+
+        <form class="contacts__form" novalidate data-lead-form data-lead-source="Форма на сторінці контактів">
+          <div class="field">
+            <label for="c-name">Ваше ім’я *</label>
+            <input id="c-name" name="name" type="text" required autocomplete="name" placeholder="Як до вас звертатися?">
+          </div>
+
+          <div class="field">
+            <label for="c-phone">Ваш номер телефону *</label>
+            <input id="c-phone" name="phone" type="tel" required autocomplete="tel" placeholder="Введіть ваш номер телефону">
+          </div>
+
+          <div class="field">
+            <label for="c-message">Ваше запитання</label>
+            <textarea id="c-message" name="message" rows="5" placeholder="Напишіть ваше запитання"></textarea>
+          </div>
+
+          <button class="btn btn--primary btn--wide" type="submit">Надіслати</button>
+          <p class="form__status" data-form-status role="status"></p>
+          <p class="form__consent">Надсилаючи форму, ви погоджуєтесь на обробку даних для зворотного зв’язку.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         12. ФУТЕР
+         ==================================================================== -->
+    <footer class="footer">
+      <div class="shell footer__top">
+        <a class="footer__phone" href="tel:+380501234567" data-config="brand.phone">+38 (050) 123-45-67</a>
+        <a class="footer__logo" href="#top">SolarPro</a>
+        <a class="footer__email" href="mailto:info@solarpro.ua" data-config="brand.email">info@solarpro.ua</a>
+      </div>
+
+      <nav class="footer__nav shell" aria-label="Footer">
+        <a href="#about">Про нас</a>
+        <a href="kits.html">Комплекти</a>
+        <a href="inverters.html">Інвертори</a>
+        <a href="batteries.html">Акумулятори</a>
+        <a href="panels.html">Сонячні панелі</a>
+        <a href="#faq">Оплата і доставка</a>
+        <a href="#faq">Гарантія і повернення</a>
+        <a href="#reviews">Відгуки</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+
+      <div class="footer__bar">
+        <div class="shell footer__bar-inner">
+          <p>© <span data-year>2026</span> SolarPro. Усі права захищені.</p>
+          <ul class="footer__social">
+            <li><a href="#" data-config-href="social.facebook" target="_blank" rel="noopener" aria-label="Facebook">f</a></li>
+            <li><a href="#" data-config-href="social.instagram" target="_blank" rel="noopener" aria-label="Instagram">◎</a></li>
+            <li><a href="#" data-config-href="social.youtube" target="_blank" rel="noopener" aria-label="YouTube">▶</a></li>
+            <li><a href="#" data-config-href="social.telegram" target="_blank" rel="noopener" aria-label="Telegram">✈</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- плаваюча кнопка Telegram -->
+    <!-- плаваючі кнопки зв'язку -->
+    <div class="fab-stack">
+      <a class="fab fab--phone" href="tel:+380501234567" data-config-href="brand.phoneHref" aria-label="Подзвонити нам">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg>
+        <span class="fab__label">Подзвонити</span>
+      </a>
+
+      <a class="fab fab--viber" href="#" data-config-href="social.viber" target="_blank" rel="noopener" aria-label="Написати у Viber">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c-3 0-5.3.3-6.9 1C3 3.4 1.9 5.6 1.7 8.6c-.1 1.5-.1 3 .1 4.5.3 2.6 1.5 4.4 3.6 5.3v3.1c0 .8.9 1.2 1.5.6l2.2-2.3c.4 0 .8.1 1.2.1 3 0 5.3-.3 6.9-1 2.1-.9 3.2-3.1 3.4-6.1.2-1.9.2-3.8 0-5.7-.2-3-1.3-5.2-3.4-6.1-1.6-.7-3.2-1-6.2-1Zm-.2 3.3c2.7 0 4.9 2.1 5 4.8 0 .3.2.5.5.5s.5-.2.5-.6c-.1-3.2-2.7-5.7-6-5.7-.3 0-.5.2-.5.5s.2.5.5.5Zm.1 2c1.6 0 2.9 1.2 3 2.8 0 .3.2.5.5.5s.5-.3.5-.6c-.1-2.1-1.8-3.7-4-3.7-.3 0-.5.2-.5.5s.2.5.5.5Zm.1 2c.6 0 1 .4 1 1 0 .3.2.5.5.5s.5-.2.5-.6c-.1-1-.9-1.8-2-1.9-.3 0-.5.2-.5.5s.2.5.5.5ZM8.4 7.2c-.4-.5-1-.6-1.5-.3l-.6.4c-.9.6-1.1 1.7-.6 2.7a14 14 0 0 0 5.6 5.6c1 .5 2.1.3 2.7-.6l.4-.6c.3-.5.2-1.1-.3-1.5l-1.5-1c-.4-.3-1-.2-1.4.2l-.4.5a9.5 9.5 0 0 1-2.4-2.4l.5-.4c.4-.4.5-1 .2-1.4l-.7-1.2Z"/></svg>
+        <span class="fab__label">Viber</span>
+      </a>
+
+      <a class="fab fab--tg" href="#" data-config-href="social.telegram" target="_blank" rel="noopener" aria-label="Написати в Telegram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.7 19c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 12.7l-4.8-1.5c-1-.3-1-1 .2-1.5l18.8-7.2c.9-.3 1.6.2 1.4 1.8Z"/></svg>
+        <span class="fab__label">Telegram</span>
+      </a>
+    </div>
+
+    <!-- модальне вікно подяки -->
+    <div class="modal" id="thanks-modal" hidden>
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="thanks-title">
+        <button class="modal__close" type="button" aria-label="Закрити" data-modal-close>×</button>
+        <span class="modal__check" aria-hidden="true">✓</span>
+        <h3 id="thanks-title" data-thanks-title>Дякуємо! Заявку прийнято</h3>
+        <p data-thanks-text></p>
+        <p class="modal__extra" data-thanks-extra></p>
+        <a class="btn btn--primary btn--wide" href="#" data-thanks-button target="_blank" rel="noopener">Перейти в Telegram-канал</a>
+        <button class="modal__later" type="button" data-modal-close>Пізніше</button>
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

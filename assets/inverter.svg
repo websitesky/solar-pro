@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" role="img" aria-label="Гібридний інвертор">
+  <defs>
+    <linearGradient id="invBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e5eaf3"/>
+    </linearGradient>
+    <linearGradient id="invScreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a237e"/>
+      <stop offset="1" stop-color="#2979ff"/>
+    </linearGradient>
+    <linearGradient id="invGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2979ff" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#2979ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="320" height="260" fill="url(#invGlow)"/>
+
+  <!-- shadow -->
+  <ellipse cx="160" cy="232" rx="86" ry="10" fill="#1a237e" opacity=".12"/>
+
+  <!-- side heatsink -->
+  <rect x="76" y="40" width="16" height="176" rx="4" fill="#3c4763"/>
+  <g stroke="#54607f" stroke-width="2">
+    <path d="M78 56h12M78 72h12M78 88h12M78 104h12M78 120h12M78 136h12M78 152h12M78 168h12M78 184h12M78 200h12"/>
+  </g>
+
+  <!-- body -->
+  <rect x="92" y="34" width="140" height="188" rx="12" fill="url(#invBody)" stroke="#c3ccdd" stroke-width="2"/>
+  <path d="M92 130h140" stroke="#d3dbe8" stroke-width="2"/>
+
+  <!-- screen -->
+  <rect x="128" y="56" width="68" height="52" rx="7" fill="url(#invScreen)"/>
+  <rect x="136" y="64" width="52" height="26" rx="4" fill="#ffffff" opacity=".92"/>
+  <g fill="#1a237e">
+    <rect x="141" y="80" width="7" height="6" rx="1.5"/>
+    <rect x="152" y="74" width="7" height="12" rx="1.5"/>
+    <rect x="163" y="69" width="7" height="17" rx="1.5"/>
+    <rect x="174" y="72" width="7" height="14" rx="1.5"/>
+  </g>
+  <g fill="#8ec5ff">
+    <circle cx="141" cy="98" r="3.5"/>
+    <circle cx="153" cy="98" r="3.5"/>
+    <circle cx="165" cy="98" r="3.5"/>
+  </g>
+
+  <!-- vents -->
+  <g fill="#dfe6f1">
+    <rect x="106" y="146" width="112" height="6" rx="3"/>
+    <rect x="106" y="158" width="112" height="6" rx="3"/>
+    <rect x="106" y="170" width="112" height="6" rx="3"/>
+  </g>
+
+  <!-- connectors -->
+  <g fill="#2f3a54">
+    <rect x="112" y="222" width="14" height="14" rx="3"/>
+    <rect x="136" y="222" width="14" height="14" rx="3"/>
+    <rect x="160" y="222" width="14" height="14" rx="3"/>
+    <rect x="184" y="222" width="14" height="14" rx="3"/>
+  </g>
+  <path d="M119 236v10M143 236v14M167 236v10M191 236v14" stroke="#2f3a54" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>

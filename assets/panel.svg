@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" role="img" aria-label="Сонячна панель">
+  <defs>
+    <linearGradient id="panGlass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="0.55" stop-color="#123163"/>
+      <stop offset="1" stop-color="#0d2247"/>
+    </linearGradient>
+    <linearGradient id="panGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2979ff" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#2979ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="panShine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".34"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="320" height="260" fill="url(#panGlow)"/>
+
+  <!-- sun -->
+  <circle cx="258" cy="48" r="20" fill="#ffd24d" opacity=".85"/>
+  <g stroke="#ffd24d" stroke-width="3" stroke-linecap="round" opacity=".7">
+    <path d="M258 14v-8M258 90v8M292 48h8M216 48h-8M282 24l6-6M234 72l-6 6M282 72l6 6M234 24l-6-6"/>
+  </g>
+
+  <ellipse cx="160" cy="236" rx="98" ry="10" fill="#1a237e" opacity=".12"/>
+
+  <!-- frame -->
+  <rect x="40" y="66" width="216" height="136" rx="8" fill="#cfd6e2"/>
+  <rect x="48" y="74" width="200" height="120" rx="4" fill="url(#panGlass)"/>
+
+  <!-- cells -->
+  <g stroke="#5b7fc7" stroke-width="1.6" opacity=".75">
+    <path d="M98 74v120M148 74v120M198 74v120"/>
+    <path d="M48 104h200M48 134h200M48 164h200"/>
+  </g>
+  <g stroke="#8fb4f5" stroke-width="0.8" opacity=".55">
+    <path d="M73 74v120M123 74v120M173 74v120M223 74v120"/>
+  </g>
+
+  <rect x="48" y="74" width="200" height="120" rx="4" fill="url(#panShine)"/>
+
+  <!-- stand -->
+  <path d="M96 202l-18 34M224 202l18 34" stroke="#9aa5b8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M78 236h164" stroke="#9aa5b8" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" role="img" aria-label="Комплект: інвертор та акумулятор">
+  <defs>
+    <linearGradient id="kitBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e3e9f3"/>
+    </linearGradient>
+    <linearGradient id="kitGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2979ff" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#2979ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="320" height="260" fill="url(#kitGlow)"/>
+  <ellipse cx="160" cy="234" rx="104" ry="10" fill="#1a237e" opacity=".12"/>
+
+  <!-- inverter (left) -->
+  <rect x="46" y="46" width="106" height="140" rx="11" fill="url(#kitBody)" stroke="#c3ccdd" stroke-width="2"/>
+  <rect x="70" y="64" width="58" height="42" rx="6" fill="#1a237e"/>
+  <rect x="77" y="71" width="44" height="20" rx="3" fill="#ffffff" opacity=".92"/>
+  <g fill="#8ec5ff">
+    <circle cx="82" cy="98" r="3"/><circle cx="93" cy="98" r="3"/><circle cx="104" cy="98" r="3"/>
+  </g>
+  <g fill="#dfe6f1">
+    <rect x="60" y="124" width="78" height="6" rx="3"/>
+    <rect x="60" y="136" width="78" height="6" rx="3"/>
+    <rect x="60" y="148" width="78" height="6" rx="3"/>
+  </g>
+  <g fill="#2f3a54">
+    <rect x="64" y="186" width="12" height="12" rx="3"/>
+    <rect x="88" y="186" width="12" height="12" rx="3"/>
+    <rect x="112" y="186" width="12" height="12" rx="3"/>
+  </g>
+
+  <!-- battery (right) -->
+  <g stroke="#c3ccdd" stroke-width="2">
+    <rect x="172" y="140" width="102" height="46" rx="9" fill="url(#kitBody)"/>
+    <rect x="172" y="90" width="102" height="46" rx="9" fill="url(#kitBody)"/>
+  </g>
+  <rect x="172" y="56" width="102" height="30" rx="8" fill="#1a237e"/>
+  <rect x="182" y="65" width="34" height="12" rx="3" fill="#ffffff" opacity=".9"/>
+  <circle cx="246" cy="71" r="5" fill="#8ec5ff"/>
+  <g>
+    <rect x="184" y="108" width="60" height="7" rx="3.5" fill="#dfe6f1"/>
+    <rect x="184" y="108" width="50" height="7" rx="3.5" fill="#2979ff"/>
+    <rect x="184" y="158" width="60" height="7" rx="3.5" fill="#dfe6f1"/>
+    <rect x="184" y="158" width="42" height="7" rx="3.5" fill="#2979ff"/>
+  </g>
+
+  <!-- link cable -->
+  <path d="M152 150c14 0 8 -22 20 -22" stroke="#2f3a54" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- plus badge -->
+  <circle cx="160" cy="196" r="16" fill="#1a237e"/>
+  <path d="M160 188v16M152 196h16" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+</svg>
