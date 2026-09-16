@@ -95,6 +95,7 @@ img {
    2. ПЕРШИЙ ЕКРАН — код узятий із approved-hero.html без змін
    ============================================================ */
 .approved-hybrid-variant {
+  container-type: inline-size;
   width: min(1440px, calc(100% - 32px));
   min-height: calc(100svh - 32px);
   margin: 16px auto;
@@ -107,9 +108,12 @@ img {
 
 .approved-video-area {
   position: relative;
-  /* відео 1280×720 — висота = ширина картки × 9/16, щоб кадр було видно цілком
-     (будинок, газон, машину); на низьких екранах обмежуємо 88% висоти вікна */
-  height: clamp(440px, calc(min(1440px, 100vw - 32px) * 9 / 16), 88svh);
+  /* Відео 1280×720. У правому нижньому куті кадру водяний знак Gemini:
+     x 1136–1183, y 577–623. Показуємо кадр від верху до y = 566 (на 11px вище знака),
+     тому висота = ширина × 566 / 1280. Нижче знака нічого не видно.
+     Ліміт 88svh лише ще більше підрізає низ — знак однаково лишається за кадром. */
+  height: min(calc(min(1440px, 100vw - 32px) * 566 / 1280), 88svh);
+  height: min(calc(100cqw * 566 / 1280), 88svh);
   overflow: hidden;
   background: #0b1630;
 }
@@ -120,8 +124,8 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* якщо вікно низьке й кадр таки підрізається — жертвуємо небом, а не газоном */
-  object-position: center 65%;
+  /* прив'язка до верху: обрізається тільки низ кадру, разом зі знаком */
+  object-position: center top;
 }
 
 .approved-header {
@@ -2015,12 +2019,14 @@ img {
     box-shadow: none;
   }
 
+  /* До 500px кадр вищий за 16:9, тож обрізаються боки. Зсув 40% лишає
+     правий край кадру (де знак) за межами екрана. */
   .approved-video-area {
     height: 360px;
   }
 
   .approved-video-area video {
-    object-position: 55% 72%;
+    object-position: 40% top;
   }
 
   .approved-header {
@@ -2801,5 +2807,19 @@ body.page {
 @media (prefers-reduced-motion: reduce) {
   .carousel__dot {
     transition: none;
+  }
+}
+
+
+/* 501–720px: при висоті 360px знак уже потрапляв би в кадр,
+   тому тут, як і на десктопі, обрізаємо низ кадру вище знака */
+@media (min-width: 501px) and (max-width: 720px) {
+  .approved-video-area {
+    height: calc(100vw * 566 / 1280);
+    height: calc(100cqw * 566 / 1280);
+  }
+
+  .approved-video-area video {
+    object-position: center top;
   }
 }
