@@ -684,8 +684,29 @@
   /* ==========================================================
      СТАРТ
      ========================================================== */
+  /* ==========================================================
+     9. ВІДЕО НА ПЕРШОМУ ЕКРАНІ — трохи швидше
+     ========================================================== */
+  var HERO_VIDEO_SPEED = 1.25; /* 1 = звичайна швидкість, 1.25 = на 25% швидше */
+
+  function initHeroVideo() {
+    var video = $('.approved-video-area video');
+    if (!video) return;
+
+    function applySpeed() {
+      video.defaultPlaybackRate = HERO_VIDEO_SPEED;
+      video.playbackRate = HERO_VIDEO_SPEED;
+    }
+
+    applySpeed();
+    /* деякі браузери скидають швидкість після завантаження або на новому колі */
+    video.addEventListener('loadedmetadata', applySpeed);
+    video.addEventListener('play', applySpeed);
+  }
+
   function init() {
     applyConfig();
+    initHeroVideo();
     initNav();
     initDropdowns();
     initCarousels();
