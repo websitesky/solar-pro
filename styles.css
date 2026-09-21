@@ -2823,3 +2823,136 @@ body.page {
     object-position: center top;
   }
 }
+
+
+/* ============================================================
+   11. СТІЙКІСТЬ НА ТЕЛЕФОНАХ
+   У вбудованих браузерах (Instagram, Facebook) на Android текст часто
+   збільшений системним розміром шрифту. Довгі слова («енергонезалежності»,
+   «енергообладнання») тоді не влазять у ширину, виштовхують сторінку вбік
+   і вона починає гортатись горизонтально.
+   ============================================================ */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* сторінка ніколи не гортається вбік.
+   hidden — тільки на html: на body воно зробило б його окремою прокручуваною
+   областю й зламало б липку шапку. clip такого побічного ефекту не має. */
+html {
+  overflow-x: hidden;
+}
+
+@supports (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+/* довге слово переноситься, а не вилазить за край */
+h1,
+h2,
+h3,
+.section__title,
+.cta__title,
+.advantages__title,
+.page-title,
+.approved-promise,
+.fact__num,
+.product__name {
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mobile-nav__panel a,
+.mobile-nav__panel button,
+.btn {
+  overflow-wrap: anywhere;
+}
+
+.btn {
+  height: auto;
+  padding-block: 12px;
+  line-height: 1.25;
+}
+
+@media (max-width: 720px) {
+  .section__title {
+    font-size: clamp(22px, 6.4vw, 30px);
+    letter-spacing: -0.02em;
+  }
+
+  .cta__title {
+    font-size: clamp(23px, 7vw, 32px);
+    letter-spacing: -0.02em;
+  }
+
+  .advantages__title {
+    font-size: clamp(17px, 4.8vw, 20px);
+  }
+
+  .page-title {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .cta {
+    padding-inline: 18px;
+  }
+
+  .advantages {
+    padding: 26px 18px;
+  }
+
+  /* шторка меню: ширина від екрана, хрестик завжди видно */
+  .mobile-nav__panel {
+    width: min(340px, 88vw);
+    padding: 20px 18px 28px;
+  }
+
+  .mobile-nav__phone,
+  .mobile-nav__tg {
+    padding: 13px 10px;
+    font-size: 15px;
+  }
+}
+
+
+/* контакти на телефоні: підпис над значенням, колонки не розпирають екран */
+.contacts > *,
+.contacts__form .field,
+.help__form .field,
+.quiz__form .field {
+  min-width: 0;
+}
+
+.field input,
+.field textarea {
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .contacts__list {
+    grid-template-columns: 1fr;
+    gap: 2px 0;
+  }
+
+  .contacts__list dt {
+    margin-top: 12px;
+  }
+
+  .contacts__list dt:first-child {
+    margin-top: 0;
+  }
+
+  .contacts__list dd {
+    overflow-wrap: anywhere;
+  }
+
+  .contacts__info,
+  .contacts__form {
+    padding-inline: 18px;
+  }
+}
