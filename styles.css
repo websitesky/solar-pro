@@ -220,7 +220,11 @@ img {
   z-index: 3;
   bottom: 38px;
   left: clamp(30px, 4.5vw, 66px);
-  max-width: 760px;
+  /* 880px вистачає, щоб заголовок лягав у два рядки:
+     «Інвертори та сонячні панелі» / «для вашого дому та бізнесу» (по ~820px).
+     right тримає його в межах картки на вужчих екранах. */
+  right: clamp(30px, 4.5vw, 66px);
+  max-width: 880px;
   margin: 0;
   color: #ffffff;
   font-size: clamp(42px, 4.4vw, 64px);
@@ -2862,9 +2866,13 @@ h3,
 .approved-promise,
 .fact__num,
 .product__name {
+  /* break-word рятує лише тоді, коли слово справді не влазить у рядок.
+     hyphens: auto тут був помилкою: браузер ділив слова зі знаком на кожному
+     рядку («па-нелі», «ме-режі»), хоча місця вистачало. */
   overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+  text-wrap: balance;
 }
 
 .mobile-nav__panel a,
